@@ -76,9 +76,6 @@ println "exampleVariable type: ${exampleVariable.getClass()}"
 exampleVariable = 'f'
 println "exampleVariable type: ${exampleVariable.getClass()}"
 
-// def firstDate = Date.parse("yyyy-MM-dd", "2015-02-28")
-// def secondDate = Date.parse("yyyy-MM-dd", "2015-01-31")
-
 Date firstDate = new GregorianCalendar(2015, Calendar.FEBRUARY, 28).getTime();
 Date secondDate = new GregorianCalendar(2015, Calendar.JANUARY, 31).getTime();
 
