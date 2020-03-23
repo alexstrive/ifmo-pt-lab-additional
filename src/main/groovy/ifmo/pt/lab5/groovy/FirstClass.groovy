@@ -5,6 +5,7 @@ class FirstClass {
   String title;
   Boolean isBlocked;
   Float rating;
+  def binding
 
   FirstClass(Integer id, String title, Boolean isBlocked, Float rating) {
     this.id = id
@@ -14,7 +15,7 @@ class FirstClass {
   }
 
   FirstClass() {
-    def binding = new Binding(id: 2, title: "Will", isBlocked: false, rating: 23)
+    this.binding = new Binding(id: 2, title: "Will", isBlocked: false, rating: 23)
   }
 
   Integer getId() {

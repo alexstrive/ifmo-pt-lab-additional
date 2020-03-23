@@ -18,6 +18,7 @@ try {
 def firstClassGeneratedThroughConstructor = new FirstClass(1, "John", false, 32.2f)
 
 def firstClassWithBindings = new FirstClass()
+println firstClassWithBindings.binding.title
 
 println "Integer instanceof String: ${5 instanceof String}"
 println "String instanceof Integer ${"" instanceof Integer}"
