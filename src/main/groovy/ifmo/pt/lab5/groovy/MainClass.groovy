@@ -84,3 +84,5 @@ println "33 - 6 = ${substraction(33, 6)}"
 
 def combined = { a, b, c -> substraction(division(a, b), c) }
 println "15 / 3 - 10 = ${combined(15, 3, 10)}"
+
+// Lesson 4
