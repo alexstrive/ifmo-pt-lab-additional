@@ -1,5 +1,9 @@
 package ifmo.pt.lab5.groovy
 
+import groovy.time.TimeCategory
+import java.time.*
+import java.util.*
+
 def java = new JavaClass()
 
 // Lesson 1
@@ -72,7 +76,27 @@ println "exampleVariable type: ${exampleVariable.getClass()}"
 exampleVariable = 'f'
 println "exampleVariable type: ${exampleVariable.getClass()}"
 
-def firstDate = Date.parse('1973/07/21')
+// def firstDate = Date.parse("yyyy-MM-dd", "2015-02-28")
+// def secondDate = Date.parse("yyyy-MM-dd", "2015-01-31")
+
+Date firstDate = new GregorianCalendar(2015, Calendar.FEBRUARY, 28).getTime();
+Date secondDate = new GregorianCalendar(2015, Calendar.JANUARY, 31).getTime();
+
+println firstDate
+println secondDate
+def dateDifference = firstDate.getTime() - secondDate.getTime()
+
+println "firstDate - secondDate ${dateDifference}"
+
+use(TimeCategory) {
+  def firstDateMinusMonth = firstDate - 1.month
+
+  println firstDateMinusMonth
+
+  def firstDateMinusMonthPlusMonthAndDay = firstDateMinusMonth + 1.month + 1.day
+
+  println firstDateMinusMonthPlusMonthAndDay
+}
 
 // Lesson 3
 def division = { a, b -> a / b }
