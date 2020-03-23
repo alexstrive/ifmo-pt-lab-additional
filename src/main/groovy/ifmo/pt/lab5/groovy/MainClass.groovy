@@ -14,9 +14,12 @@ try {
 
 def firstClassGeneratedThroughConstructor = new FirstClass(1, "John", false, 32.2f)
 
-def firstClassValues = new Binding(id: 1, name: "John", isBlocked: false, rating: 32.2f)
+def firstClassValues = new Binding(id: 2, title: "Will")
 
-// def firstClassGeneratedThroughBinding = new FirstClass(firstClassValues)
+firstClassGeneratedThroughConstructor.setId(firstClassValues.getVariable('id'))
+firstClassGeneratedThroughConstructor.setTitle(firstClassValues.getVariable('title'))
+
+println "New id for FirstClass ${firstClassGeneratedThroughConstructor.id}"
 
 println "Integer instanceof String: ${5 instanceof String}"
 println "String instanceof Integer ${"" instanceof Integer}"
