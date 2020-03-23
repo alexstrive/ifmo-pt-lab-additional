@@ -13,6 +13,10 @@ class FirstClass {
     this.rating = rating
   }
 
+  FirstClass() {
+    def binding = new Binding(id: 2, title: "Will", isBlocked: false, rating: 23)
+  }
+
   Integer getId() {
     id
   }

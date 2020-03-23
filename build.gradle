@@ -24,6 +24,9 @@ dependencies {
     // Use the latest Groovy version for building this library
     implementation 'org.codehaus.groovy:groovy-all:3.0.2'
 
+    // https://mvnrepository.com/artifact/postgresql/postgresql
+    implementation group: 'postgresql', name: 'postgresql', version: '9.0-801.jdbc4'
+
     // Use the awesome Spock testing and specification framework
     testImplementation 'org.spockframework:spock-core:1.3-groovy-2.5'
 }

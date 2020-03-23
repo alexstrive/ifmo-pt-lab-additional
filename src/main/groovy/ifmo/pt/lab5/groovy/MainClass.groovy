@@ -15,15 +15,9 @@ try {
   println "Unable to create FirstClass instance through named parameters"
 }
 
-
 def firstClassGeneratedThroughConstructor = new FirstClass(1, "John", false, 32.2f)
 
-def firstClassValues = new Binding(id: 2, title: "Will")
-
-firstClassGeneratedThroughConstructor.setId(firstClassValues.getVariable('id'))
-firstClassGeneratedThroughConstructor.setTitle(firstClassValues.getVariable('title'))
-
-println "New id for FirstClass ${firstClassGeneratedThroughConstructor.id}"
+def firstClassWithBindings = new FirstClass()
 
 println "Integer instanceof String: ${5 instanceof String}"
 println "String instanceof Integer ${"" instanceof Integer}"
@@ -107,3 +101,9 @@ def combined = { a, b, c -> substraction(division(a, b), c) }
 println "15 / 3 - 10 = ${combined(15, 3, 10)}"
 
 // Lesson 4
+def db = [url: "jdbc:postgresql://localhost/mpa", user: "postgres", password: "password"]
+def sql = groovy.sql.Sql.newInstance(db.url, db.user, db.password, "org.postgresql.Driver")
+def rows = sql.rows('select * from patient')
+
+println rows.join('\n')
+assert rows.size() == 6
