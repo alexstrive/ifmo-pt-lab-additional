@@ -107,4 +107,3 @@ def sql = groovy.sql.Sql.newInstance(db.url, db.user, db.password, "org.postgres
 def rows = sql.rows('select * from patient')
 
 println rows.join('\n')
-assert rows.size() == 6
